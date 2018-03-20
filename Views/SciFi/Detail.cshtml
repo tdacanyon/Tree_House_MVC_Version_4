@@ -1,0 +1,45 @@
+﻿ Layout = "";
+  ViewBag.Title = "Comic Book Detail";
+}
+
+<!-- his right here ^^ above is "Razor" bit that combines C# and HTML it is c# -->
+<!-- This is C# code setting the layout property to null the layout page is the overall look and feel for the site-->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width" />
+  <title></title>
+</head>
+<body>
+  <div>
+    <h1>
+      <!--We are just calling c# vars herer-->
+      Name of Book:
+      <div> @ViewBag.BookName</div>
+    </h1>
+    <h2>
+      Description of Book:
+      <div> @Html.Raw(ViewBag.Description) </div>
+      <!-- The HTML.Raw tab forces the browser to render the content -->
+    </h2>
+    @if (ViewBag.characters.Length > 0)
+    { <!--Looks like we can just throw an if statement in.-->
+      <h5>
+        Characters from Book:
+        <div>
+          <ul>
+            @foreach (var character in ViewBag.characters)
+            {
+              <li>* @character</li>
+            }
+            <!--The text element lets Razor know we are switchging back to html -->
+            <!--The the "li" = line item seems you don't really need the "Ul" tags.-->
+          </ul>
+        </div>
+      </h5>
+    }
+  </div>
+</body>
+</html>
