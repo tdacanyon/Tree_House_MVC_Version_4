@@ -1,9 +1,9 @@
 ﻿<!-- THIS IS IMPORTANT. THIS IS HOW THE VIEW SEES THE MODEL we write the fully qualified
   namespace for the sciFiBook model class. This is weird because we seem to be skipping the Controller class
-  and referencing a model directly--> 
+  and referencing a model directly-->
 @model Tree_House_MVC_Version_4.Models.SciFiBook
 
-@{  
+@{
   Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -22,35 +22,34 @@
   <div>
     <h2>
       <!--We are just calling c# vars herer-->
-      Name of Book:
+      Name of Book2:
     </h2>
-      <h5>
-        <div>@Model.Title </div>
-      </h5>
+    <h5>
+      <div>@Model.Title </div>
+    </h5>
     <h2>
-      Description of Book:
+      Description of Book2:
     </h2>
-      <h5>
-        <div> @Html.Raw(Model.DescriptionHtml) </div>
-      </h5>
-      <!-- The HTML.Raw tab forces the browser to render the content -->
- 
+    <h5>
+      <div> @Html.Raw(Model.DescriptionHtml) </div>
+    </h5>
+    <!-- The HTML.Raw tab forces the browser to render the content -->
+
     @if (Model.Characters.Length > 0)
     { <!--Looks like we can just throw an if statement in.-->
 
       <h2>
         Characters from Book:
       </h2>
-          <ul>
-            @foreach (var character in Model.Characters)
-            {
-              <li><h5>@character.Name: @character.CharacterSketch </h5> </li>
-            }
-            <!--The text element lets Razor know we are switchging back to html -->
-            <!--The the "li" = line item seems you don't really need the "Ul" tags.-->
-          </ul>
+      <ul>
+        @foreach (var character in Model.Characters)
+        {
+          <li><h5>@character.Name: @character.CharacterSketch </h5> </li>
+        }
+        <!--The text element lets Razor know we are switchging back to html -->
+        <!--The the "li" = line item seems you don't really need the "Ul" tags.-->
+      </ul>
     }
   </div>
-  <a href="http://localhost:53780/SciFi/Detail2">Go to Page 2</a>
 </body>
 </html>
