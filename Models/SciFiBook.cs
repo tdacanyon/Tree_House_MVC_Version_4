@@ -20,7 +20,7 @@ namespace Tree_House_MVC_Version_4.Models
     {
       get
       {
-        return Title + "#" + PublicationDate;
+        return Title+ " : " +PublicationDate;
       }
     }
     // title-publicationDate.jpg = SciFi Book image scheme

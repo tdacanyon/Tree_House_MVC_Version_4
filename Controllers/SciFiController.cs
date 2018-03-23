@@ -9,6 +9,7 @@ namespace Treehouse_SciFiGallery_2.Controllers
 {
   public class SciFiController : Controller
   {
+    // The most important thing to remember here is 
     public ActionResult Detail()
     {
       // here we instantiate a new instance of sciFiBook
@@ -63,7 +64,7 @@ namespace Treehouse_SciFiGallery_2.Controllers
       // We could do this below to pass info to the view but it is not optimal
       //ViewBag.SciFiBook = sciFiBook;
 
-      return View(sciFiBook);
+      return View(sciFiBook2);
     }
     public ActionResult Detail2()
     {
@@ -97,7 +98,7 @@ namespace Treehouse_SciFiGallery_2.Controllers
         }
       };
 
-      return View(sciFiBook);
+      return View(sciFiBook2);
     }
   }
 }
