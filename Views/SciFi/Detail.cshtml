@@ -1,8 +1,8 @@
 ﻿<!-- THIS IS IMPORTANT. THIS IS HOW THE VIEW SEES THE MODEL we write the fully qualified
   namespace for the sciFiBook model class. This is weird because we seem to be skipping the Controller class
-  and referencing a model directly-->
-
+  and referencing a model directly--> 
 @model Tree_House_MVC_Version_4.Models.SciFiBook
+
 @{
   Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -13,7 +13,7 @@
   <!--These 3 classes are part of the boot strap framework-->
   <div class="col-md-6">
     <div class="well">
-      <h2><label>Book Title:</h2> </label> @Model.Title</h2>
+      <h2><label>Book Title: </label> @Model.Title</h2>
       <h5><label>Publication Date:</label> @Model.PublicationDate</h5>
       <h5><label>Tom's Ranking on a scale of 1 to 10:</label> 7 </h5>
       @if (Model.Characters.Length > 0)
@@ -27,22 +27,31 @@
         <h2>
           Characters from Book:
         </h2>
-        <div>
           <ul>
             @foreach (var character in Model.Characters)
             {
+              
               <li><h5>@character.Name: @character.CharacterSketch </h5> </li>
             }
-            <!--The text element lets Razor know we are switching back to html -->
-            <!--The "li" = line item seems you don't really need the "Ul" tags.-->
+            <!--The text element lets Razor know we are switchging back to html -->
+            <!--The the "li" = line item seems you don't really need the "Ul" tags.-->
           </ul>
-        </div>
-      }
-      <!-- The HTML.Raw tab forces the browser to render the content }
-        </div>
+        }
+   
       </div>
-      <img src="/Images/seven-eves-2015.jpg"
-           class="img-responsive" />
+    <img src="~/Images/@Model.CoverImageFileName">
+    </div>
+  </div>
+    
+
+@{  
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- his right here ^^ above is "Razor" bit that combines C# and HTML it is c# -->
+<!-- This is C# code setting the layout property to null the layout page is the overall look and feel for the site-->
+<!-- To get files inn we add them through file explorer hit "view all files" then right click and "add to project"-->
+<!-- I fucked up the start path so we need to enter this http://localhost:53780/SciFi/Detail -->
 
       <!-- This is the hard part.
         1. This file has the same name as the action result method on control.  public ActionResult Detail()
@@ -53,5 +62,8 @@
       <!-- To get files inn we add them through file explorer hit "view all files" then right click and "add to project"-->
       <!-- I fucked up the start path so we need to enter this http://localhost:53780/SciFi/Detail -->
       <!--We are just calling c# vars herer-->
+
+
+  <a href="http://localhost:53780/SciFi/Detail2">Go to Page 2</a>
 
 

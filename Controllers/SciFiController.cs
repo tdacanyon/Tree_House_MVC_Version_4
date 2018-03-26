@@ -9,13 +9,14 @@ namespace Treehouse_SciFiGallery_2.Controllers
 {
   public class SciFiController : Controller
   {
-    // The most important thing to remember here is 
     public ActionResult Detail()
     {
+     
       // here we instantiate a new instance of sciFiBook
+     
       var sciFiBook = new SciFiBook()
       {
-        Title = " Player of Games ",
+        Title = "Player of Games",
         PublicationDate = "1988",
         DescriptionHtml = " Space Chess in Space ",
         Author = " Ian M Banks ",
@@ -27,12 +28,15 @@ namespace Treehouse_SciFiGallery_2.Controllers
            new Characters() {Name = " Drone Flere-Imsaho", CharacterSketch = "Jernau's companion" },
         }
       };
+    
       var sciFiBook2 = new SciFiBook()
       {
-        Title = " Seveneves ",
+        Title = "Seveneves",
         PublicationDate = "2015",
         DescriptionHtml = " Moon breaks up and is not good for humans. Eventually, only 7 women are left. They restart the human race ",
         Author = " Neil Stephenson ",
+        
+
         Characters = new Characters[]
         {
            new Characters() {Name = "Dinah MacQuarie:", CharacterSketch = "Roboticist working for Arjuna expeditions (a private asteroid mining company). Her robots specialize in asteroid iron mining. She decides to focus her descendants' genetics on leadership and 'heroic' qualities." },
@@ -41,7 +45,7 @@ namespace Treehouse_SciFiGallery_2.Controllers
            new Characters() {Name = " Moira Crewe", CharacterSketch = "Gives only surviving child the ability to undergo epigenetic shifts in order to counter all the changes Aïda makes in her offspring." },
         }
       };
-
+      var test = sciFiBook2.CoverImageFileName;
       // View bag is an object in MVC that allows us to pass data from a controller to a view
       // View bag is one of the few real life use cases of dynamic types.
       // var type of variables are required to be initialized at the time of declaration or 
@@ -63,15 +67,14 @@ namespace Treehouse_SciFiGallery_2.Controllers
 
       // We could do this below to pass info to the view but it is not optimal
       //ViewBag.SciFiBook = sciFiBook;
-
-      return PartialView(sciFiBook2);
+      return View(sciFiBook2);
     }
     public ActionResult Detail2()
     {
       // here we instantiate a new instance of sciFiBook
       var sciFiBook = new SciFiBook()
       {
-        Title = " Player of Games ",
+        Title = "Player of Games",
         PublicationDate = "1988",
         DescriptionHtml = " Space Chess in Space ",
         Author = " Ian M Banks ",
@@ -97,8 +100,7 @@ namespace Treehouse_SciFiGallery_2.Controllers
            new Characters() {Name = " Moira Crewe", CharacterSketch = "Gives only surviving child the ability to undergo epigenetic shifts in order to counter all the changes Aïda makes in her offspring." },
         }
       };
-
-      return View(sciFiBook2);
+      return View(sciFiBook);
     }
   }
 }
