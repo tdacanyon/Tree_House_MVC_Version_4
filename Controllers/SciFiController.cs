@@ -64,7 +64,7 @@ namespace Treehouse_SciFiGallery_2.Controllers
       // We could do this below to pass info to the view but it is not optimal
       //ViewBag.SciFiBook = sciFiBook;
 
-      return View(sciFiBook2);
+      return PartialView(sciFiBook2);
     }
     public ActionResult Detail2()
     {
