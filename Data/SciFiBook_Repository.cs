@@ -52,7 +52,6 @@ namespace Tree_House_MVC_Version_4.Data
         {
            new Characters() {Name = "John Boone", CharacterSketch =  "An American astronaut, who was the first human to walk on Mars in the year 2020" },
            new Characters() {Name = " Frank Chalmers ", CharacterSketch = "Head of the American contingent, he is Machiavellian in his use of power." },
-         
         }
       }
   };
