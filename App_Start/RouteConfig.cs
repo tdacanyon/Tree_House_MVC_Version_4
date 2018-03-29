@@ -11,12 +11,17 @@ namespace Tree_House_MVC_Version_4
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            // This makes sure that requests for .axd are never routed to one of the controls. 
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+            // This is the definition of the default rout. 
             routes.MapRoute(
+                // This is the name of the route
                 name: "Default",
+                // This is the URL pattern and is defined by surrounding the parameter names with curly braces
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                // The "Optional" here means that it will still reach a URL even 
+                // if it is not defined. 
+                defaults: new { controller = "SciFiBook", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

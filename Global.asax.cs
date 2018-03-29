@@ -7,12 +7,15 @@ using System.Web.Routing;
 
 namespace Tree_House_MVC_Version_4
 {
-    public class MvcApplication : System.Web.HttpApplication
+  public class MvcApplication : System.Web.HttpApplication
+  {
+    // We can use this method to use any code used to initialize a website.
+    protected void Application_Start()
     {
-        protected void Application_Start()
-        {
-            AreaRegistration.RegisterAllAreas();
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-        }
+      // Areas are used to group areas of large websites
+      AreaRegistration.RegisterAllAreas();
+      // Used to configure routs
+      RouteConfig.RegisterRoutes(RouteTable.Routes);
     }
+  }
 }
