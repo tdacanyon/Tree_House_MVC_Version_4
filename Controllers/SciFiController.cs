@@ -14,9 +14,16 @@ namespace Treehouse_SciFiGallery_2.Controllers
   {
     private SciFiBook_Repository _sciFiBook_Repository = null;
 
+    // Constructor
     public SciFiController()
     {
       _sciFiBook_Repository = new SciFiBook_Repository();
+    }
+
+    public ActionResult Index()
+    {
+      var comicBooks = _sciFiBook_Repository.GetSciFiBooksArray();
+      return View(comicBooks); 
     }
     
     // this is tricky the ? allows us to pass null (nullable types) if no int is provided

@@ -104,6 +104,8 @@
     <Content Include="Global.asax" />
     <Content Include="Images\bone-50.jpg" />
     <Content Include="Images\download %281%29.jpg" />
+    <Content Include="Images\player-of-games-1988.jpg" />
+    <Content Include="Images\red-mars-1992.jpg" />
     <Content Include="Images\seveneves-2015.jpg" />
     <Content Include="Images\the-amazing-spider-man-657.jpg" />
     <Content Include="Images\the-amazing-spider-man-700.jpg" />
@@ -129,6 +131,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\SciFi\Detail.cshtml" />
     <Content Include="Views\SciFi\Detail2.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\SciFi\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

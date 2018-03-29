@@ -1,0 +1,21 @@
+﻿
+
+@model Tree_House_MVC_Version_4.Models.SciFiBook[]
+
+<!-- This here is important. Model is just the information being passed in by the method in
+  controller. -->
+
+
+
+<div class="row">
+  @foreach (var sciFiBook in Model)
+  {
+    <div class="col-md-3">
+      <h4>@sciFiBook.DisplayText</h4>
+      <img src="/Images/@sciFiBook.CoverImageFileName"
+           alt="@sciFiBook.DisplayText"
+           class="img-responsive" />
+    </div>
+  }
+  
+</div>

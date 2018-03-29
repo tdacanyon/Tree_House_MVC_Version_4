@@ -8,6 +8,7 @@ namespace Tree_House_MVC_Version_4.Data
 {
   public class SciFiBook_Repository
   {
+    // This constuctor autmatiaclly l
     private static SciFiBook[] _SciFiBookArray = new SciFiBook[]
     {
       new SciFiBook()
@@ -55,6 +56,13 @@ namespace Tree_House_MVC_Version_4.Data
         }
       }
   };
+
+    // public 
+    public SciFiBook[] GetSciFiBooksArray()
+    {
+      return _SciFiBookArray; 
+    }
+
     public SciFiBook GetSiFiBook(int ID) 
     {
       SciFiBook sciFiBookToReturn = null;
