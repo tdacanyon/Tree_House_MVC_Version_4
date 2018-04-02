@@ -7,6 +7,11 @@
   Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@{
+  ViewBag.Title = Model.DisplayText;
+  ViewBag.ShowBackBar = true; 
+  }
+
 <h2>@Model.DisplayText</h2>
 <div class="row">
   <!--These 3 classes are part of the boot strap frafmework-->
@@ -29,24 +34,22 @@
           <ul>
             @foreach (var character in Model.Characters)
             {
-              
               <li><h5>@character.Name: @character.CharacterSketch </h5> </li>
             }
             <!--The text element lets Razor know we are switchging back to html -->
-            <!--The the "li" = line item seems you don't really need the "Ul" tags.-->
+            <!--The "li" = line item seems you don't really need the "Ul" tags.-->
           </ul>
         }
-   
       </div>
+    <div>
+      @Html.ActionLink("Back To Main List", "Index")
+    </div>
     <img src="~/Images/@Model.CoverImageFileName">
     </div>
   </div>
-    
-
 @{  
   Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <!-- his right here ^^ above is "Razor" bit that combines C# and HTML it is c# -->
 <!-- This is C# code setting the layout property to null the layout page is the overall look and feel for the site-->
 <!-- To get files inn we add them through file explorer hit "view all files" then right click and "add to project"-->
@@ -60,9 +63,7 @@
       <!-- This is C# code setting the layout property to null the layout page is the overall look and feel for the site-->
       <!-- To get files inn we add them through file explorer hit "view all files" then right click and "add to project"-->
       <!-- I fucked up the start path so we need to enter this http://localhost:53780/SciFi/Detail -->
-      <!--We are just calling c# vars herer-->
+      <!--We are just calling c# vars here-->
 
-
-  <a href="http://localhost:53780/SciFi/Detail2">Go to Page 2</a>
 
 

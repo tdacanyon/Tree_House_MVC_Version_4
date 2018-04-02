@@ -5,17 +5,21 @@
 <!-- This here is important. Model is just the information being passed in by the method in
   controller. -->
 
-
-
 <div class="row">
   @foreach (var sciFiBook in Model)
   {
     <div class="col-md-3">
-      <h4>@sciFiBook.DisplayText</h4>
+      <!--We turn this into a hyper link-->
+      <!--We use anonymous types to instantiate an object here The New is really creating 
+        a new instance of "RouteValue and maps a parameter" -->
+      <!-- For the action link (Text to be displayed, Detail is the "Action Result", and 
+        new id = scifiBook.Id is the parameter to be ) -->
+      <h4>@Html.ActionLink(sciFiBook.DisplayText, "Detail", new { id = sciFiBook.ID }) </h4>
       <img src="/Images/@sciFiBook.CoverImageFileName"
            alt="@sciFiBook.DisplayText"
            class="img-responsive" />
-    </div>
+     
+</div>
   }
   
 </div>

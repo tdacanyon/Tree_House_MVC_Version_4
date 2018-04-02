@@ -27,7 +27,18 @@
             </div>
         </div>
     </div>
-
+  @if (ViewBag.ShowBackBar != null && ViewBag.ShowBackBar == true)
+  {
+    <div class="backbar">
+      <div class="container">
+        <!--btn and btn-default are css classes. So what this does is
+          if Detail View uses  -->
+        @Html.ActionLink("Return to List", "Index", null, new { @class = "btn btn-default" } )
+     
+      </div>
+    </div>
+  }
+  
     <div class="container body-content">
      <!-- This tells MVC where to include the content-->
         @RenderBody()

@@ -24,6 +24,8 @@ namespace Treehouse_SciFiGallery_2.Controllers
     {
       var comicBooks = _sciFiBook_Repository.GetSciFiBooksArray();
       return View(comicBooks); 
+      //return Content("YO"). This is interesting in that it makes it so the index view just
+      //displays "YO" regardless of what is there. 
     }
     
     // this is tricky the ? allows us to pass null (nullable types) if no int is provided
@@ -34,14 +36,11 @@ namespace Treehouse_SciFiGallery_2.Controllers
       {
         return HttpNotFound(); 
         // This returns your 404 error
-
       }
       var sciFiBook = _sciFiBook_Repository.GetSiFiBook(id.Value);
       // Because we are using a nullable type we need to typ "Value" to get at the underlying value. 
       return View(sciFiBook);
-
     }
-  
      // Here is your turniary operator. You need the parenthesis to make sure razor knows
       // <label> Favorite: </label> @(model.Favorite ? "Yes" : "No") </h5> 
       // here we instantiate a new instance of sciFiBook
@@ -56,31 +55,28 @@ namespace Treehouse_SciFiGallery_2.Controllers
 
       // We could do this below to pass info to the view but it is not optimal
       //ViewBag.SciFiBook = sciFiBook;
-  
-    
-  
-    SciFiBook jim = new SciFiBook();
+
+    //SciFiBook jim = new SciFiBook();
    
-    public ActionResult Detail2()
-    {
-      // here we instantiate a new instance of sciFiBook
-      //var sciFiBook = new SciFiBook()
-      //{
-      //  Title = "Player of Games",
-      //  PublicationDate = "1988",
-      //  DescriptionHtml = " Space Chess in Space ",
-      //  Author = " Ian M Banks ",
-      //  Characters = new Characters[]
-      //  {
-      //     new Characters() {Name = "Drone: Just Read the Instructions", CharacterSketch = "Big mean mind" },
-      //     new Characters() {Name = " Drone: Of Course I Still Lover You", CharacterSketch = "Another big mean mind" },
-      //     new Characters() {Name = " Jernau Morat Gurgeh", CharacterSketch = "Main Character and Player of Games" },
-      //     new Characters() {Name = " Drone Flere-Imsaho", CharacterSketch = "Jernau's companion" },
-      //  }
-      //};
-      SciFiBook_Repository jim2 = new SciFiBook_Repository(); 
-      
-      return View(jim2.GetSiFiBook(2));
-    }
+    //public ActionResult Detail2()
+    //{
+    //  // here we instantiate a new instance of sciFiBook
+    //  //var sciFiBook = new SciFiBook()
+    //  //{
+    //  //  Title = "Player of Games",
+    //  //  PublicationDate = "1988",
+    //  //  DescriptionHtml = " Space Chess in Space ",
+    //  //  Author = " Ian M Banks ",
+    //  //  Characters = new Characters[]
+    //  //  {
+    //  //     new Characters() {Name = "Drone: Just Read the Instructions", CharacterSketch = "Big mean mind" },
+    //  //     new Characters() {Name = " Drone: Of Course I Still Lover You", CharacterSketch = "Another big mean mind" },
+    //  //     new Characters() {Name = " Jernau Morat Gurgeh", CharacterSketch = "Main Character and Player of Games" },
+    //  //     new Characters() {Name = " Drone Flere-Imsaho", CharacterSketch = "Jernau's companion" },
+    //  //  }
+    //  //};
+    //  SciFiBook_Repository jim2 = new SciFiBook_Repository(); 
+    //  return View(jim2.GetSiFiBook(2));
+    //}
   }
 }
